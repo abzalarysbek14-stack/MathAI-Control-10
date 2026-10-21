@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MathAI Control — Математика көмекшісі</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-icon">∑</span><span>MathAI<br><b>Control</b></span></div>
+    <nav>
+      <a class="active" href="#home">⌂ <span>Басты бет</span></a>
+      <a href="#checker">✓ <span>Есепті шығару</span></a>
+      <a href="#topics">▤ <span>10-сынып тақырыптары</span></a>
+    </nav>
+    <div class="side-note"><span>✦</span><p>Қателесу — үйренудің бір бөлігі.</p></div>
+  </aside>
+
+  <main id="home">
+    <header class="topbar">
+      <div><p class="eyebrow">МАТЕМАТИКАНЫ САНАЛЫ ҮЙРЕН</p><h1>MathAI Control</h1></div>
+      <div class="status"><span class="dot"></span> Оқу режимі</div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <span class="tag">10-СЫНЫПҚА АРНАЛҒАН</span>
+        <h2>Есепті шығар.<br><em>Шешімін түсін.</em></h2>
+        <p>Тақырыпты таңда, есепті енгіз және шешу жолын қадамдап үйрен. Бұл нұсқада бірнеше 10-сынып үлгісі дайын.</p>
+        <a class="primary-link" href="#checker">Есепті бастау <span>→</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="math-card card-a">sin x = 1/2</div>
+        <div class="math-card card-b">f′(x) = 2x</div>
+        <div class="big-sigma">∑</div><div class="spark">✦</div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <article><span class="stat-icon">✎</span><div><strong>Қадамдық шешім</strong><small>әр кезеңді түсіндіру</small></div></article>
+      <article><span class="stat-icon">⌕</span><div><strong>10-сынып есептері</strong><small>негізгі тақырыптар</small></div></article>
+      <article><span class="stat-icon">↗</span><div><strong>Өз бетіңше үйрен</strong><small>жауабын тексеру</small></div></article>
+    </section>
+
+    <section class="workspace" id="checker">
+      <div class="section-heading"><div><p class="eyebrow">ПРАКТИКА</p><h2>Есепті шығару және тексеру</h2></div><span class="step-label">10-СЫНЫП</span></div>
+      <div class="work-grid">
+        <form class="panel" id="mathForm">
+          <label for="topicSelect">Тақырып пен дайын мысалды таңда</label>
+          <select id="topicSelect">
+            <option value="quadratic">Квадрат теңдеу</option>
+            <option value="trig">Тригонометриялық теңдеу</option>
+            <option value="exponential">Көрсеткіштік теңдеу</option>
+            <option value="logarithm">Логарифмдік теңдеу</option>
+            <option value="derivative">Туынды табу</option>
+            <option value="linear">Сызықтық теңдеу</option>
+          </select>
+          <label for="equation">Есеп шарты</label>
+          <input id="equation" value="x^2 - 5x + 6 = 0" required>
+          <p class="hint">Төмендегі мысалдар жұмыс істейді. Басқа есеп енгізсең, қолдау шектеулі болуы мүмкін.</p>
+          <label for="steps">Өз шешу жолың (міндетті емес)</label>
+          <textarea id="steps" rows="5" placeholder="Шешу жолыңды осында жаз..."></textarea>
+          <div class="form-actions"><button type="button" class="secondary" id="exampleBtn">Мысалды жүктеу</button><button class="primary" type="submit">Шығару <span>→</span></button></div>
+        </form>
+        <div class="panel result-panel" aria-live="polite">
+          <div class="result-title"><span class="result-icon">✦</span><div><h3>Шешімі</h3><p>Есептің жауабы мен түсіндірмесі</p></div></div>
+          <div id="result" class="result-content"><div class="empty-state"><span>∑</span><p>Тақырыпты таңдап,<br>«Шығару» батырмасын бас.</p></div></div>
+          <div class="tip"><span>💡</span><p><b>Ескерту</b><br>Бұл нұсқа дайын үлгілерді шешеді. Кез келген жаңа есепке толық ЖИ қосу үшін серверлік API қажет.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how" id="topics">
+      <p class="eyebrow">ОҚУ БАҒДАРЛАМАСЫ</p><h2>10-сынып тақырыптары</h2>
+      <div class="how-grid">
+        <article><span>01</span><h3>Алгебра</h3><p>Квадрат, көрсеткіштік және логарифмдік теңдеулер.</p></article>
+        <article><span>02</span><h3>Тригонометрия</h3><p>Негізгі тригонометриялық теңдеулер мен мәндер.</p></article>
+        <article><span>03</span><h3>Туынды</h3><p>Қарапайым функциялардың туындысын табу.</p></article>
+      </div>
+      <p class="disclaimer">Демонстрациялық прототип: шешімдер тек осы бетте бағдарламаланған мысалдар үшін беріледі. Ол әзірге барлық математикалық есепті автоматты түсінбейді және сыртқы ЖИ сервисіне қосылмаған.</p>
+    </section>
+    <footer>© 2026 MathAI Control <span>Математиканы түсініп үйрен.</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
